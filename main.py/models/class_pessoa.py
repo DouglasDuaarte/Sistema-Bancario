@@ -1,3 +1,7 @@
+from models.utils import info_conta
+
+
+
 class Pessoa:
     def __init__(self, nome, sobrenome, cpf, idade):
         
@@ -56,14 +60,8 @@ class Pessoa:
 
 
 
-    def info_conta(self):
-        if not self._contas_bancarias:
-            print("Nenhuma conta cadastrada!")
-
-        else:
-            print("\n--Contas Bancarias--\n")
-            for conta in self._contas_bancarias:
-                print(conta)
+    def info_contas(self):
+        info_conta(self._contas_bancarias) #utils import
     
 
     #criando meus objetos apartir de inputs @classmethod
